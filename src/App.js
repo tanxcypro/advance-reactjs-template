@@ -7,6 +7,7 @@ import About from "./pages/About";
 import Profile from "./pages/Profile";
 import SignIn from "./pages/SignIn";
 import DetailUser from "./pages/DetailUser";
+import Registrasi from"./pages/Registrasi"
 
 import PrivateRoute from "./components/PrivateRoute";
 
@@ -15,6 +16,7 @@ function App() {
     <Router>
       <div>
         <nav>
+      
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -25,12 +27,16 @@ function App() {
             <li>
               <Link to="/profile">Profile</Link>
             </li>
+            <li>
+              <Link to="/registrasi">registrasi</Link>
+            </li>
           </ul>
         </nav>
       </div>
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/signin" element={<SignIn />} />
+        <Route exact path="/registrasi" element={<Registrasi />} />
         {/* protect this routes with <PrivateRoute> */}
         <Route exact path="/" element={<PrivateRoute />}>
           <Route exact path="/about" element={<About />} />
